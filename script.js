@@ -2,6 +2,8 @@
 let todoContainer = document.getElementById("todo-container");
 let htmlForm = document.getElementById("todo-form");
 let inputBox = document.getElementById("todo-input");
+let buttonEdit = document.createElement("button");
+let buttonDelete = document.createElement("button");
 
 htmlForm.addEventListener("submit", function(event){
     // Prevent page refresh on click
@@ -24,7 +26,7 @@ htmlForm.addEventListener("submit", function(event){
 
             // Retrieve input value
             let inputValue = inputElement.value;
-            
+
             // Display input value in the divText
             divText.textContent = inputValue;
 
@@ -75,6 +77,13 @@ htmlForm.addEventListener("submit", function(event){
             // Append the buttonDelete to the list item
             listItem.appendChild(buttonDelete);
 
+            // If delete button is clicked, remove the list item
+            buttonDelete.addEventListener("click", function(event){
+                if (event.target === buttonDelete) {
+                    listItem.remove();
+                }
+            })
+
             // Append the listItem to the todoContainer
             todoContainer.appendChild(listItem);
 
@@ -82,6 +91,15 @@ htmlForm.addEventListener("submit", function(event){
             inputElement.value = '';
         }
 });
+
+// buttonDelete.addEventListener("click", function(event){
+//     if (event.target === buttonDelete) {
+//         event.target.remove();
+//     }
+//     else if (event.target === buttonEdit) {
+//         buttonEdit.textContent = inputBox.value;
+//     }
+// })
 
 /* 
 3.  Set up an event listener for clicking a to-do item's button
