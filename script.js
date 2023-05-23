@@ -57,6 +57,26 @@ htmlForm.addEventListener("submit", function(event){
             // Append the buttonEdit to the list item
             listItem.appendChild(buttonEdit);
 
+            // Create a button for saving
+            let buttonSave = document.createElement("button");
+
+            // Add text to the button
+            buttonSave.textContent = "Save";
+
+            // Apply CSS styles
+            buttonSave.style.backgroundColor = "#33ff00";
+            buttonSave.style.color = "white";
+            buttonSave.style.marginRight = "5px";
+            buttonSave.style.padding = "10px 30px";
+            buttonSave.style.border = "none";
+            buttonSave.style.borderRadius = "5px";
+            buttonSave.style.boxShadow = "black 0px 0px 1px";
+            buttonSave.style.cursor = "pointer";
+            buttonSave.style.display = "none";
+
+            // Append the buttonSave to the list item
+            listItem.appendChild(buttonSave);
+
             // Create a button for deleting
             let buttonDelete = document.createElement("button");
 
@@ -95,13 +115,21 @@ htmlForm.addEventListener("submit", function(event){
                     divText.innerHTML = '';
                     divText.appendChild(editInput);
 
+                    // Show the save button and hide the edit button
+                    buttonEdit.style.display = "none";
+                    buttonSave.style.display = "inline-block";
+
                     // Focus the input field
                     editInput.focus();
 
                     // Add a blur event listener to save the edited text
-                    editInput.addEventListener("blur", function(){
-                        // Update the divText with the edited value
-                        divText.textContent = editInput.value;
+                    editInput.addEventListener("blur", function () {
+                    // Update the divText with the edited value
+                    divText.textContent = editInput.value;
+                
+                    // Hide the save button and show the edit button
+                    buttonEdit.style.display = "inline-block";
+                    buttonSave.style.display = "none";
                     });
                 }
             });
