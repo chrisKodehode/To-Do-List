@@ -4,6 +4,7 @@ let htmlForm = document.getElementById("todo-form");
 let inputBox = document.getElementById("todo-input");
 let buttonEdit = document.createElement("button");
 let buttonDelete = document.createElement("button");
+let divText  = document.createElement("div");
 
 htmlForm.addEventListener("submit", function(event){
     // Prevent page refresh on click
@@ -12,8 +13,8 @@ htmlForm.addEventListener("submit", function(event){
     let inputElement = inputBox;
         if (inputElement.value !== "") {
             // Create list item and div for the text
-            let listItem = document.createElement("li");
-            let divText  = document.createElement("div");
+            listItem = document.createElement("li");
+            divText  = document.createElement("div");
 
             listItem.style.display = "item-list";
             listItem.style.marginTop = "10px";
@@ -83,6 +84,27 @@ htmlForm.addEventListener("submit", function(event){
                     listItem.remove();
                 }
             })
+
+            // If edit button is clicked, replace text
+            buttonEdit.addEventListener("click", function(event){
+                if (event.target === buttonEdit) {
+                    // Replace the text with editable input field
+                    let editInput = document.createElement("input");
+                    editInput.type = "text";
+                    editInput.value = divText.textContent;
+                    divText.innerHTML = '';
+                    divText.appendChild(editInput);
+
+                    // Focus the input field
+                    editInput.focus();
+
+                    // Add a blur event listener to save the edited text
+                    editInput.addEventListener("blur", function(){
+                        // Update the divText with the edited value
+                        divText.textContent = editInput.value;
+                    });
+                }
+            });
 
             // Append the listItem to the todoContainer
             todoContainer.appendChild(listItem);
