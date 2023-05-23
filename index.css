@@ -5,7 +5,7 @@ body {
   padding: 50px;
 }
 
-.todo-container {
+#todo-container {
   background: #fff;
   max-width: 500px;
 
@@ -63,4 +63,8 @@ body {
   background: none;
   border: none;
   cursor: pointer;
+}
+
+#add-task-btn{
+  background-color: red;
 }

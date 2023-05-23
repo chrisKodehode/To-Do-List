@@ -36,10 +36,17 @@ htmlForm.addEventListener("submit", function(event){
             console.log(inputValue);
 
             // create div for the buttons
-            let divButton = document.createElement("div")
-            console.log(divButton)
+            let divButton = document.createElement("div");
+            console.log(divButton);
+            listItem.appendChild(divButton)
 
-            
+            let buttonEdit = document.createElement("button");
+            listItem.appendChild(buttonEdit);
+
+            let buttonDelete = document.createElement("button");
+            listItem.appendChild(buttonDelete);
+
+            todoContainer.appendChild(listItem);
         }
 });
 
