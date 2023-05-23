@@ -12,11 +12,18 @@ htmlForm.addEventListener("submit", function(event){
             // Create list item and div for the text
             let listItem = document.createElement("li");
             let divText  = document.createElement("div");
+
+            // Apply CSS Style to listItems
+            divText.style.color = "red";
+            divText.style.fontSize = "100px";
             listItem.appendChild(divText);
 
             // Retrieve input value
             let inputValue = inputElement.value;
             console.log(inputValue);
+
+            // Display input value in the divText
+            divText.textContent = inputValue;
 
             // Create div for the buttons
             let divButton = document.createElement("div");
