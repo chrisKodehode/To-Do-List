@@ -1,3 +1,5 @@
+// TODO: save selections aka todo list
+
 // Define html elements and assign them to a variable
 let todoContainer = document.getElementById("todo-container");
 let htmlForm = document.getElementById("todo-form");
@@ -141,22 +143,3 @@ htmlForm.addEventListener("submit", function(event){
             inputElement.value = '';
         }
 });
-
-/* 
-3.  Set up an event listener for clicking a to-do item's button
-    - If the clicked button is the delete button:
-        - Remove the associated list item from the to-do list
-    - If the clicked button is the edit button:
-        - Replace the text div with an input box containing the current text
-        - Replace the edit button with a save button
-*/
-
-/*
-4.  Set up an event listener for clicking a to-do item's save button
-      - Replace the input box with a div containing the input box's value
-      - Replace the save button with an edit button
-*/
-
-/*
-(Note: As of now, this list would not persist if the webpage were to be refreshed. To keep the list, you would need to add a storage feature, such as using localStorage, a database, or a backend service.)
-*/
