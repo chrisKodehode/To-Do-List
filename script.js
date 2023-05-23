@@ -92,15 +92,6 @@ htmlForm.addEventListener("submit", function(event){
         }
 });
 
-// buttonDelete.addEventListener("click", function(event){
-//     if (event.target === buttonDelete) {
-//         event.target.remove();
-//     }
-//     else if (event.target === buttonEdit) {
-//         buttonEdit.textContent = inputBox.value;
-//     }
-// })
-
 /* 
 3.  Set up an event listener for clicking a to-do item's button
     - If the clicked button is the delete button:
