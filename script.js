@@ -26,13 +26,20 @@ htmlForm.addEventListener("submit", function(event){
 
     let inputElement = document.getElementById("todo-input");
         if (inputElement.value !== "") {
+            // create list item and div for the text
             let listItem = document.createElement("li");
             let divText  = document.createElement("div");
             listItem.appendChild(divText);
 
+            // retrieve input value
             let inputValue = inputElement.value;
             console.log(inputValue);
 
+            // create div for the buttons
+            let divButton = document.createElement("div")
+            console.log(divButton)
+
+            
         }
 });
 
