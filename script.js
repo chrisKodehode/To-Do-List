@@ -7,7 +7,7 @@ htmlForm.addEventListener("submit", function(event){
     // Prevent page refresh on click
     event.preventDefault();
 
-    let inputElement = document.getElementById("todo-input");
+    let inputElement = inputBox;
         if (inputElement.value !== "") {
             // Create list item and div for the text
             let listItem = document.createElement("li");
@@ -24,8 +24,7 @@ htmlForm.addEventListener("submit", function(event){
 
             // Retrieve input value
             let inputValue = inputElement.value;
-            console.log(inputValue);
-
+            
             // Display input value in the divText
             divText.textContent = inputValue;
 
