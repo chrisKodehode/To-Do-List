@@ -68,14 +68,16 @@ htmlForm.addEventListener("submit", function(event){
             // Apply CSS styles
             buttonSave.style.backgroundColor = "#33ff00";
             buttonSave.style.color = "white";
+            
+            buttonSave.style.display = "none";
             buttonSave.style.marginRight = "5px";
             buttonSave.style.padding = "10px 30px";
+
             buttonSave.style.border = "none";
             buttonSave.style.borderRadius = "5px";
             buttonSave.style.boxShadow = "black 0px 0px 1px";
-            buttonSave.style.cursor = "pointer";
-            buttonSave.style.display = "none";
 
+            buttonSave.style.cursor = "pointer";
             // Append the buttonSave to the list item
             listItem.appendChild(buttonSave);
 
