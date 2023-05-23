@@ -49,7 +49,7 @@ htmlForm.addEventListener("submit", function(event){
             buttonEdit.style.border = "none";
             buttonEdit.style.borderRadius = "5px";
             buttonEdit.style.boxShadow = "black 0px 0px 1px"
-            
+
             buttonEdit.style.cursor = "pointer";
 
             // Append the buttonEdit to the list item
@@ -78,6 +78,9 @@ htmlForm.addEventListener("submit", function(event){
 
             // Append the listItem to the todoContainer
             todoContainer.appendChild(listItem);
+
+            // Clear the input value
+            inputElement.value = '';
         }
 });
 
