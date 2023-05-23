@@ -3,46 +3,31 @@ let todoContainer = document.getElementById("todo-container");
 let htmlForm = document.getElementById("todo-form");
 let inputBox = document.getElementById("todo-input");
 
-/*
-1: Select the form element.
-2: Add an event listener to the form that listens for "submit" events.
-3: When the form is submitted, prevent the default behavior.
-4: Select the input element.
-5: Get the value of the input element.
-7: Check if the value is not empty.
-If the value is not empty: 
-    a. Create a new list item element. 
-    b. Create a new div element for the text. 
-    c. Create a new div element for the buttons. 
-    d. Create a new button element for editing. 
-    e. Create a new button element for deletion. 
-    f. Append the text div and button div to the list item element. 
-    g. Append the list item element to the todo list container.
-*/
-
 htmlForm.addEventListener("submit", function(event){
-    // prevent page refresh on click
+    // Prevent page refresh on click
     event.preventDefault();
 
     let inputElement = document.getElementById("todo-input");
         if (inputElement.value !== "") {
-            // create list item and div for the text
+            // Create list item and div for the text
             let listItem = document.createElement("li");
             let divText  = document.createElement("div");
             listItem.appendChild(divText);
 
-            // retrieve input value
+            // Retrieve input value
             let inputValue = inputElement.value;
             console.log(inputValue);
 
-            // create div for the buttons
+            // Create div for the buttons
             let divButton = document.createElement("div");
             listItem.appendChild(divButton)
 
+            // Create a button for editing
             let buttonEdit = document.createElement("button");
 
             // Add text to the button
             buttonEdit.textContent = "Edit"
+
             // Apply CSS styles
             buttonEdit.style.backgroundColor = "yellow";
             buttonEdit.style.color = "black";
@@ -53,12 +38,15 @@ htmlForm.addEventListener("submit", function(event){
             buttonEdit.style.cursor = "pointer";
             buttonEdit.style.boxShadow = "black 0px 0px 1px"
 
-            // Append the button to the list item
+            // Append the buttonEdit to the list item
             listItem.appendChild(buttonEdit);
 
+            // Create a button for deleting
             let buttonDelete = document.createElement("button");
+
             // Add text to the button
             buttonDelete.textContent = "Delete"
+
             // Apply CSS styles
             buttonDelete.style.backgroundColor = "red";
             buttonDelete.style.color = "black";
@@ -67,8 +55,11 @@ htmlForm.addEventListener("submit", function(event){
             buttonDelete.style.borderRadius = "5px";
             buttonDelete.style.cursor = "pointer";
             buttonDelete.style.boxShadow = "black 0px 0px 1px"
+
+            // Append the buttonDelete to the list item
             listItem.appendChild(buttonDelete);
 
+            // Append the listItem to the todoContainer
             todoContainer.appendChild(listItem);
         }
 });
