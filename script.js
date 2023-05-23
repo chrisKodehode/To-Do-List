@@ -37,8 +37,6 @@ htmlForm.addEventListener("submit", function(event){
 
             // create div for the buttons
             let divButton = document.createElement("div");
-            console.log(divButton);
-            divButton.style.justifyContent = "center"
             listItem.appendChild(divButton)
 
             let buttonEdit = document.createElement("button");
@@ -50,21 +48,25 @@ htmlForm.addEventListener("submit", function(event){
             buttonEdit.style.color = "black";
             buttonEdit.style.marginRight = "5px";
             buttonEdit.style.padding = "10px 30px";
-            buttonEdit.style.border = "solid";
+            buttonEdit.style.border = "none";
             buttonEdit.style.borderRadius = "5px";
+            buttonEdit.style.cursor = "pointer";
+            buttonEdit.style.boxShadow = "black 0px 0px 1px"
 
             // Append the button to the list item
             listItem.appendChild(buttonEdit);
 
             let buttonDelete = document.createElement("button");
             // Add text to the button
-            buttonDelete.textContent = "Edit"
+            buttonDelete.textContent = "Delete"
             // Apply CSS styles
-            buttonDelete.style.backgroundColor = "yellow";
+            buttonDelete.style.backgroundColor = "red";
             buttonDelete.style.color = "black";
-            buttonDelete.style.padding = "10px 30px";
-            buttonDelete.style.border = "solid";
+            buttonDelete.style.padding = "10px 20px";
+            buttonDelete.style.border = "none";
             buttonDelete.style.borderRadius = "5px";
+            buttonDelete.style.cursor = "pointer";
+            buttonDelete.style.boxShadow = "black 0px 0px 1px"
             listItem.appendChild(buttonDelete);
 
             todoContainer.appendChild(listItem);
