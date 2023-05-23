@@ -42,12 +42,15 @@ htmlForm.addEventListener("submit", function(event){
             // Apply CSS styles
             buttonEdit.style.backgroundColor = "yellow";
             buttonEdit.style.color = "black";
+
             buttonEdit.style.marginRight = "5px";
             buttonEdit.style.padding = "10px 30px";
+
             buttonEdit.style.border = "none";
             buttonEdit.style.borderRadius = "5px";
-            buttonEdit.style.cursor = "pointer";
             buttonEdit.style.boxShadow = "black 0px 0px 1px"
+            
+            buttonEdit.style.cursor = "pointer";
 
             // Append the buttonEdit to the list item
             listItem.appendChild(buttonEdit);
@@ -61,11 +64,14 @@ htmlForm.addEventListener("submit", function(event){
             // Apply CSS styles
             buttonDelete.style.backgroundColor = "red";
             buttonDelete.style.color = "black";
+
             buttonDelete.style.padding = "10px 20px";
+
             buttonDelete.style.border = "none";
             buttonDelete.style.borderRadius = "5px";
-            buttonDelete.style.cursor = "pointer";
             buttonDelete.style.boxShadow = "black 0px 0px 1px"
+
+            buttonDelete.style.cursor = "pointer";
 
             // Append the buttonDelete to the list item
             listItem.appendChild(buttonDelete);
