@@ -2,6 +2,7 @@
 let todoContainer = document.getElementById("todo-container");
 let htmlForm = document.getElementById("todo-form");
 let inputBox = document.getElementById("todo-input");
+let unorderedList = document.getElementById("todo-list");
 
 htmlForm.addEventListener("submit", function(event){
     // Prevent page refresh on click
@@ -13,8 +14,17 @@ htmlForm.addEventListener("submit", function(event){
             let listItem = document.createElement("li");
             let divText  = document.createElement("div");
 
+            // unorderedList.style.marginTop = "20px";
+            // todoContainer.appendChild(unorderedList);
+
+            listItem.style.display = "item-list";
+            listItem.style.marginTop = "10px";
+            // todoContainer.appendChild(listItem)
+
             // Apply CSS Style to listItems
             divText.style.fontSize = "16px";
+            divText.style.display = "inline-block";
+            divText.style.marginBottom = "10px";
             listItem.appendChild(divText);
 
             // Retrieve input value
