@@ -110,15 +110,22 @@ htmlForm.addEventListener("submit", function(event){
             // If edit button is clicked, replace text
             buttonEdit.addEventListener("click", function(event){
                 if (event.target === buttonEdit) {
-                    // Replace the text with editable input field
+                    // Create a new input field for editing
                     let editInput = document.createElement("input");
+
+                    // Set the input field type to "text"
                     editInput.type = "text";
+
                     editInput.value = divText.textContent;
+
+                    // Clear the value of divText
                     divText.innerHTML = '';
+                
                     divText.appendChild(editInput);
 
-                    // Show the save button and hide the edit button
+                    // hide the edit button
                     buttonEdit.style.display = "none";
+                    // Show the save button
                     buttonSave.style.display = "inline-block";
 
                     // Focus the input field
@@ -129,8 +136,9 @@ htmlForm.addEventListener("submit", function(event){
                     // Update the divText with the edited value
                     divText.textContent = editInput.value;
                 
-                    // Hide the save button and show the edit button
+                    // Show the edit button
                     buttonEdit.style.display = "inline-block";
+                    // Hide the save button
                     buttonSave.style.display = "none";
                     });
                 }
