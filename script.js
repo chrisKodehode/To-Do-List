@@ -1,4 +1,9 @@
-// TODO: save selections aka todo list
+/*
+    TODO:
+    - Fix todo list save
+    - Fix multiple save bug  
+*/
+
 
 // Define html elements and assign them to a variable
 let todoContainer = document.getElementById("todo-container");
