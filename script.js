@@ -14,8 +14,7 @@ htmlForm.addEventListener("submit", function(event){
             let divText  = document.createElement("div");
 
             // Apply CSS Style to listItems
-            divText.style.color = "red";
-            divText.style.fontSize = "100px";
+            divText.style.fontSize = "16px";
             listItem.appendChild(divText);
 
             // Retrieve input value

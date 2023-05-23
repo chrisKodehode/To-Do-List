@@ -41,26 +41,3 @@ body {
 
   cursor: pointer;
 }
-
-#todo-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-#todo-list li {
-  background: #f9f9f9;
-  
-  display: flex;
-  justify-content: space-between;
-
-  margin-bottom: 5px;
-  padding: 10px;
-
-  border-radius: 5px;
-}
-
-#todo-list li button {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
