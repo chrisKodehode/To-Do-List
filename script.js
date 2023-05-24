@@ -14,6 +14,15 @@ let buttonEdit = document.createElement("button");
 let buttonDelete = document.createElement("button");
 let divText  = document.createElement("div");
 
+function saveEdit(divText, editInput, buttonEdit, buttonSave) {
+    divText.textContent = editInput.value;
+    
+    // Show the edit button
+    buttonEdit.style.display = "inline-block";
+    // Hide the save button
+    buttonSave.style.display = "none";
+}
+
 htmlForm.addEventListener("submit", function(event){
     // Prevent page refresh on click
     event.preventDefault();
