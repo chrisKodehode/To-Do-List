@@ -2,6 +2,7 @@
     TODO:
     - Fix todo list save
     - Fix multiple save bug  
+    - Fix save bug when multiple items is selected
 */
 
 
