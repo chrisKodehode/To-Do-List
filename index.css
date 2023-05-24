@@ -41,3 +41,41 @@ body {
 
   cursor: pointer;
 }
+
+.list-item {
+  display: list-item;
+  margin-top: 10px;
+}
+
+.div-text {
+  font-size: 16px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.button-edit, .button-save, .button-delete {
+  margin-right: 100%;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: black 0px 0px 1px;
+  cursor: pointer;
+}
+
+.button-edit {
+  background-color: yellow;
+  color: black;
+}
+
+.button-save {
+  display: none;
+  background-color: #33ff00;
+  color: white;
+}
+
+.button-delete {
+  margin-top: 10px;
+  padding: 10px 22px;
+  background-color: red;
+  color: black;
+}
