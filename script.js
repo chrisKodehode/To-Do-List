@@ -17,7 +17,6 @@ htmlForm.addEventListener("submit", function(event){
     if (inputElement.value !== "") {
         // Create list item and div for the text
         let listItem = document.createElement("li");
-        listItem.style.display = "item-list";
         listItem.style.marginTop = "10px";
         
         // Create a div to hold the todo text
@@ -66,7 +65,6 @@ htmlForm.addEventListener("submit", function(event){
         buttonSave.style.boxShadow = "black 0px 0px 1px";
         buttonSave.style.cursor = "pointer";
 
-        buttonSave.style.display = "none";
         listItem.appendChild(buttonSave);
 
         // Create a Delete button and style it using CSS property
