@@ -10,7 +10,7 @@ let inputBox = document.getElementById("todo-input");
 
 // Add event listener to the form to handle button submission
 htmlForm.addEventListener("submit", function(event){
-    // Prevent default form submission behavior
+    // Prevent default page refresh
     event.preventDefault();
 
     let inputElement = inputBox;
@@ -23,6 +23,7 @@ htmlForm.addEventListener("submit", function(event){
         // Create a div to hold the todo text
         let divText  = document.createElement("div");
         divText.style.fontSize = "16px";
+
         divText.style.display = "inline-block";
         divText.style.marginBottom = "10px";
         listItem.appendChild(divText);
@@ -64,7 +65,6 @@ htmlForm.addEventListener("submit", function(event){
 
         buttonSave.style.boxShadow = "black 0px 0px 1px";
         buttonSave.style.cursor = "pointer";
-
 
         buttonSave.style.display = "none";
         listItem.appendChild(buttonSave);
