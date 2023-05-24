@@ -17,14 +17,12 @@ htmlForm.addEventListener("submit", function(event){
     if (inputElement.value !== "") {
         // Create list item and div for the text
         let listItem = document.createElement("li");
-        listItem.style.marginTop = "10px";
+        listItem.className = "list-item";
         
         // Create a div to hold the todo text
         let divText  = document.createElement("div");
-        divText.style.fontSize = "16px";
+        divText.className = "div-text";
 
-        divText.style.display = "inline-block";
-        divText.style.marginBottom = "10px";
         listItem.appendChild(divText);
 
         // Set todo text from the input
@@ -34,56 +32,22 @@ htmlForm.addEventListener("submit", function(event){
         // Create an Edit button and style it using CSS property
         let buttonEdit = document.createElement("button");
         buttonEdit.textContent = "Edit";
-        buttonEdit.style.backgroundColor = "yellow";
-        buttonEdit.style.color = "black";
-
-        buttonEdit.style.marginRight = "100%";
-        buttonEdit.style.padding = "10px 30px";
-
-        buttonEdit.style.border = "none";
-        buttonEdit.style.borderRadius = "5px";
-
-        buttonEdit.style.boxShadow = "black 0px 0px 1px"
-
-        buttonEdit.style.cursor = "pointer";
+        buttonEdit.className = "button-edit";
 
         listItem.appendChild(buttonEdit);
 
         // Create a Save button and style it using CSS property
         let buttonSave = document.createElement("button");
         buttonSave.textContent = "Save";
-        buttonSave.style.backgroundColor = "#33ff00";
-        buttonSave.style.color = "white";
-        
-        buttonSave.style.display = "none";
-        buttonSave.style.marginRight = "100%";
-        buttonSave.style.padding = "10px 26px";
-
-        buttonSave.style.border = "none";
-        buttonSave.style.borderRadius = "5px";
-
-        buttonSave.style.boxShadow = "black 0px 0px 1px";
-        buttonSave.style.cursor = "pointer";
+        buttonSave.className = "button-save";
 
         listItem.appendChild(buttonSave);
 
         // Create a Delete button and style it using CSS property
         let buttonDelete = document.createElement("button");
         buttonDelete.textContent = "Delete";
-        buttonDelete.style.backgroundColor = "red";
-        buttonDelete.style.color = "black";
-
-        buttonDelete.style.marginRight = "100%"
-        buttonDelete.style.marginTop = "10px"
-        buttonDelete.style.padding = "10px 22px";
-
-        buttonDelete.style.border = "none";
-        buttonDelete.style.borderRadius = "5px";
-
-        buttonDelete.style.boxShadow = "black 0px 0px 1px"
-
-        buttonDelete.style.cursor = "pointer";
-
+        buttonDelete.className = "button-delete";
+        
         listItem.appendChild(buttonDelete);
 
         // Delete the todo item when the Delete button is clicked
