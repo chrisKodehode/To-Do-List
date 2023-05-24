@@ -1,6 +1,7 @@
 /*
     TODO:
     - Fix todo list save storage thingy
+    - Make input value required and can not be empty
 */
 
 // Define html elements and assign them to a variable
