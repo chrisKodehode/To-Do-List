@@ -145,24 +145,6 @@ htmlForm.addEventListener("submit", function(event){
     // Prevent default page refresh
     event.preventDefault();
 
-    // Create a constant arrow function to store item list into an array and save it to localStorage 
-    const saveTaskToStorage = () => {
-        // declare an empty task array initialize it to empty
-        let tasks = [];
-        // Get List items
-        let listItems = document.querySelectorAll(".list-item");
-        // Loop through each listItem
-        listItems.forEach((listItem) => {
-            // Declare a variable named taskText and add textContent from div-text
-            let taskText = listItem.querySelector(".div-text").textContent;
-            // Push taskText variable into tasks array
-            tasks.push(taskText);
-        });
-        // Convert JSON to string and save it into the localStorage
-        let tasksJSON = JSON.stringify(tasks);
-        localStorage.setItem("tasks", tasksJSON);
-    }
-
     let inputElement = inputBox;
     if (inputElement.value !== "") {
         // Create a list item and style it using CSS property
@@ -233,24 +215,50 @@ htmlForm.addEventListener("submit", function(event){
         buttonEdit.addEventListener("click", function(){
             // Create a Input element and assign it to a Edit variable
             let editInput = document.createElement("input");
-
+            editInput.setAttribute("required", "");
+            
             // Replace the todo text with an input field
             divText.innerHTML = '';
             divText.appendChild(editInput);
-
+            
             // Hide the edit button
             buttonEdit.style.display = "none";
             // Show the save button
             buttonSave.style.display = "flex";
-
-            // Save task to localStorage when new task is added
-            saveTaskToStorage();
-
+            
             // Focus the input field for immediate editing
             editInput.focus();
+            
+            // Save the edited todo text when Enter is pressed
+            editInput.addEventListener("keydown", function (event) {
+                // Check if Enter was pressed (without Shift)
+                if (event.key === "Enter" && !event.shiftKey) {
+                    // Prevent the default action to stop scrolling when space is pressed
+                    event.preventDefault();
 
-            // Save the edited todo text when focus leaves the input field visually
-            editInput.addEventListener("blur", function () {
+                    // Validate input value
+                    if(editInput.value !== '') {
+                        // Update the divText with the edited value
+                        divText.textContent = editInput.value;
+            
+                        // Show the edit button
+                        buttonEdit.style.display = "flex";
+                        // Hide the save button
+                        buttonSave.style.display = "none";
+            
+                        // Save tasks to localStorage
+                        saveTasksToLocalStorage();
+                    }
+                }
+            });
+        });
+
+        buttonSave.addEventListener("click", function(){
+            // Get input element
+            let editInput = listItem.querySelector('input');
+            
+            // Validate input value
+            if(editInput && editInput.value !== '') {
                 // Update the divText with the edited value
                 divText.textContent = editInput.value;
             
@@ -258,13 +266,19 @@ htmlForm.addEventListener("submit", function(event){
                 buttonEdit.style.display = "flex";
                 // Hide the save button
                 buttonSave.style.display = "none";
-            });
+            
+                // Save tasks to localStorage
+                saveTasksToLocalStorage();
+            }
         });
 
+        // Append the listItem to the todoContainer
         todoContainer.appendChild(listItem);
+
+        // Clear the input
         inputElement.value = '';
 
-        // Save task to localStorage when new task is added
-        saveTaskToStorage();        
+        // Save tasks to localStorage
+        saveTasksToLocalStorage();
     }
 });
