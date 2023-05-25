@@ -1,7 +1,5 @@
 /*
     TODO:
-    * Make input value required on buttonEdit and can not be empty
-
     ! Do these after the task is done:
     * Highlight done task "green" and uncompleted task "red"
     * Sortable via Date
@@ -124,8 +122,7 @@ window.onload = function() {
             // Save the edited todo text when focus leaves the input field visually
             editInput.addEventListener("blur", function () {
                 // Update the divText with the edited value
-                divText.textContent = editInput.value;
-            
+                divText.textContent = editInput.value;            
                 // Show the edit button
                 buttonEdit.style.display = "flex";
                 // Hide the save button
@@ -255,6 +252,12 @@ htmlForm.addEventListener("submit", function(event){
         buttonSave.addEventListener("click", function(){
             // Get input element
             let editInput = listItem.querySelector('input');
+
+            // Validate input value
+            if(editInput && editInput.value.trim() === '') {
+                alert('Input cannot be empty!');
+                return;
+            }
             
             // Validate input value
             if(editInput && editInput.value !== '') {
