@@ -17,6 +17,22 @@ let htmlForm = document.getElementById("todo-form");
 let inputBox = document.getElementById("todo-input");
 inputBox.setAttribute("required", "");
 
+// Function to save tasks to LocalStorage
+function saveTasksToLocalStorage() {
+    let tasks = [];
+
+    // Get all list items
+    let listItems = todoContainer.querySelectorAll('.list-item');
+    listItems.forEach((listItem) => {
+        let taskText = listItem.querySelector('.div-text').textContent;
+        tasks.push(taskText);
+    });
+
+    // Convert tasks to a JSON string and save in localStorage
+    let tasksJSON = JSON.stringify(tasks);
+    localStorage.setItem('tasks', tasksJSON);
+}
+
 // Add event listener to the form to handle button submission
 htmlForm.addEventListener("submit", function(event){
     // Prevent default page refresh
