@@ -15,6 +15,7 @@
 let todoContainer = document.getElementById("todo-container");
 let htmlForm = document.getElementById("todo-form");
 let inputBox = document.getElementById("todo-input");
+inputBox.setAttribute("required", "");
 
 // Add event listener to the form to handle button submission
 htmlForm.addEventListener("submit", function(event){
