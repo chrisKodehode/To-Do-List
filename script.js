@@ -2,6 +2,7 @@
     TODO:
     - Fix todo list save LocalStorage
     - Make input value required and can not be empty
+    - Keydown "Enter" after editing selected list item
 
     Do these after the task is done:
     - Highlight done task "green" and uncompleted task "red"
