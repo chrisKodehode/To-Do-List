@@ -98,6 +98,7 @@ window.onload = function() {
             // Delete the todo item when the Delete button is clicked
             buttonDelete.addEventListener("click", function(){
             listItem.remove();
+            saveTasksToLocalStorage();
         });
 
         // Change the todo item when the Edit button is clicked
