@@ -2,6 +2,7 @@
     TODO:
     - Fix todo list save LocalStorage
     - Make input value required and can not be empty
+    - Hover effect on buttons to change color
 
     Do these after the task is done:
     - Highlight done task "green" and uncompleted task "red"
