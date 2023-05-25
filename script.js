@@ -2,11 +2,10 @@
     TODO:
     - Fix todo list save LocalStorage
     - Make input value required and can not be empty
-    - Hover effect on buttons to change color
+    - Add icons to buttons
 
     Do these after the task is done:
     - Highlight done task "green" and uncompleted task "red"
-    - Add icons to buttons
     - Sortable via Date
     - Priority sorting
     - Filter items
