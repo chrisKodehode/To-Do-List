@@ -1,7 +1,7 @@
 /*
     TODO:
     * Fix todo list save LocalStorage
-    * Make input value required and can not be empty
+    * Make input value required on buttonEdit and can not be empty
     * Keydown "Enter" after editing selected list item
 
     ! Do these after the task is done:
@@ -21,6 +21,24 @@ inputBox.setAttribute("required", "");
 htmlForm.addEventListener("submit", function(event){
     // Prevent default page refresh
     event.preventDefault();
+
+    // Create a constant arrow function to store item list into an array and save it to localStorage 
+    const saveTaskToStorage = () => {
+        // declare an empty task array initialize it to empty
+        let tasks = [];
+        // Get List items
+        let listItems = document.querySelectorAll(".list-item");
+        // Loop through each listItem
+        listItems.forEach((listItem) => {
+            // Declare a variable named taskText and add textContent from div-text
+            let taskText = listItem.querySelector(".div-text").textContent;
+            // Push taskText variable into tasks array
+            tasks.push(taskText);
+        });
+        // Convert JSON to string and save it into the localStorage
+        let tasksJSON = JSON.stringify(tasks);
+        localStorage.setItem("tasks", tasksJSON);
+    }
 
     let inputElement = inputBox;
     if (inputElement.value !== "") {
@@ -102,6 +120,9 @@ htmlForm.addEventListener("submit", function(event){
             // Show the save button
             buttonSave.style.display = "flex";
 
+            // Save task to localStorage when new task is added
+            saveTaskToStorage();
+
             // Focus the input field for immediate editing
             editInput.focus();
 
@@ -119,5 +140,8 @@ htmlForm.addEventListener("submit", function(event){
 
         todoContainer.appendChild(listItem);
         inputElement.value = '';
+
+        // Save task to localStorage when new task is added
+        saveTaskToStorage();        
     }
 });
