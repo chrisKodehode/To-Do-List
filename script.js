@@ -39,24 +39,40 @@ htmlForm.addEventListener("submit", function(event){
 
         // Create an Edit button and style it using CSS property
         let buttonEdit = document.createElement("button");
+        let editIcon = document.createElement("i")
         buttonEdit.textContent = "Edit";
         buttonEdit.className = "button-edit";
 
+        editIcon.className = "fa-solid fa-pen-to-square";
+        editIcon.style.paddingLeft = "6px";
+
         listItem.appendChild(buttonEdit);
+        buttonEdit.appendChild(editIcon);
 
         // Create a Save button and style it using CSS property
         let buttonSave = document.createElement("button");
+        let saveIcon = document.createElement("i");
         buttonSave.textContent = "Save";
         buttonSave.className = "button-save";
 
+        // Icon styling
+        saveIcon.className = "fa-solid fa-bookmark";
+        saveIcon.style.paddingLeft = "6px";
+
         listItem.appendChild(buttonSave);
+        buttonSave.appendChild(saveIcon)
 
         // Create a Delete button and style it using CSS property
         let buttonDelete = document.createElement("button");
+        let deleteIcon = document.createElement("i")
         buttonDelete.textContent = "Delete";
         buttonDelete.className = "button-delete";
+
+        deleteIcon.className = "fa-solid fa-trash";
+        deleteIcon.style.paddingLeft = "6px";
         
         listItem.appendChild(buttonDelete);
+        buttonDelete.appendChild(deleteIcon);
 
         // Delete the todo item when the Delete button is clicked
         buttonDelete.addEventListener("click", function(){
@@ -75,7 +91,7 @@ htmlForm.addEventListener("submit", function(event){
             // Hide the edit button
             buttonEdit.style.display = "none";
             // Show the save button
-            buttonSave.style.display = "inline-block";
+            buttonSave.style.display = "flex";
 
             // Focus the input field for immediate editing
             editInput.focus();
@@ -86,7 +102,7 @@ htmlForm.addEventListener("submit", function(event){
                 divText.textContent = editInput.value;
             
                 // Show the edit button
-                buttonEdit.style.display = "inline-block";
+                buttonEdit.style.display = "flex";
                 // Hide the save button
                 buttonSave.style.display = "none";
             });
