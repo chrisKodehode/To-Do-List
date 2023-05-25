@@ -4,6 +4,9 @@
     - Make input value required and can not be empty
     - Highlight done task "green" and uncompleted task "red"
     - Add icons to buttons
+    - Sortable via Date
+    - Priority sorting
+    - Filter items
 */
 
 // Define html elements and assign them to a variable
