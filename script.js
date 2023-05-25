@@ -3,6 +3,7 @@
     - Fix todo list save LocalStorage
     - Make input value required and can not be empty
     - Highlight done task "green" and uncompleted task "red"
+    - Add icons to buttons
 */
 
 // Define html elements and assign them to a variable
