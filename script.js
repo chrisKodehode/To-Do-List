@@ -1,8 +1,6 @@
 /*
     TODO:
-    * Fix todo list save LocalStorage
     * Make input value required on buttonEdit and can not be empty
-    * Keydown "Enter" after editing selected list item
 
     ! Do these after the task is done:
     * Highlight done task "green" and uncompleted task "red"
@@ -99,7 +97,7 @@ window.onload = function() {
 
             // Delete the todo item when the Delete button is clicked
             buttonDelete.addEventListener("click", function(){
-                listItem.remove();
+            listItem.remove();
         });
 
         // Change the todo item when the Edit button is clicked
@@ -231,8 +229,8 @@ htmlForm.addEventListener("submit", function(event){
             
             // Save the edited todo text when Enter is pressed
             editInput.addEventListener("keydown", function (event) {
-                // Check if Enter was pressed (without Shift)
-                if (event.key === "Enter" && !event.shiftKey) {
+                // Check if Enter was pressed
+                if (event.key === "Enter") {
                     // Prevent the default action to stop scrolling when space is pressed
                     event.preventDefault();
 
