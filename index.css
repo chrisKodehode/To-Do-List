@@ -62,30 +62,40 @@ body {
 .button-edit, .button-save, .button-delete {
   margin-right: 100%;
   padding: 10px 30px;
+
   border: none;
   border-radius: 5px;
+
   box-shadow: black 0px 0px 1px;
+  
   cursor: pointer;
 }
 
 .button-edit {
   background-color: yellow;
   color: black;
-  transition: 0.15s;
   font-weight: bold;
+  
+  display: flex;
+  width: 100px;
+  
+  transition: 0.15s;
 }
 
 .button-edit:hover {
-  font-weight: bold;
   background-color: rgb(192, 192, 0);
+  font-weight: bold;
 }
 
 .button-save {
-  display: none;
   background-color: #33ff00;
   color: white;
-  transition: 0.15s;
   font-weight: bold;
+
+  display: none;
+  width: 100px;
+
+  transition: 0.15s;
 }
 
 .button-save:hover {
@@ -94,12 +104,17 @@ body {
 }
 
 .button-delete {
-  margin-top: 10px;
-  padding: 10px 22px;
   background-color: red;
   color: black;
-  transition: 0.15s;
   font-weight: bold;
+  
+  display: flex;
+  width: 100px;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 10px 22px;
+
+  transition: 0.15s;
 }
 
 .button-delete:hover {
