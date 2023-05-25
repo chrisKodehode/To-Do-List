@@ -1,6 +1,6 @@
 /*
     TODO:
-    - Fix todo list save storage thingy
+    - Fix todo list save LocalStorage
     - Make input value required and can not be empty
 */
 
