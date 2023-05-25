@@ -40,6 +40,7 @@ htmlForm.addEventListener("submit", function(event){
         let buttonEdit = document.createElement("button");
         let editIcon = document.createElement("i")
         
+        // Set the text content of the buttonEdit element to "Edit" and add the class "button-edit".
         buttonEdit.textContent = "Edit";
         buttonEdit.className = "button-edit";
 
@@ -54,6 +55,7 @@ htmlForm.addEventListener("submit", function(event){
         let buttonSave = document.createElement("button");
         let saveIcon = document.createElement("i");
 
+        // Set the text content of the buttonSave element to "Save" and add the class "button-save".
         buttonSave.textContent = "Save";
         buttonSave.className = "button-save";
 
@@ -68,6 +70,7 @@ htmlForm.addEventListener("submit", function(event){
         let buttonDelete = document.createElement("button");
         let deleteIcon = document.createElement("i")
 
+        // Set the text content of the buttonDelete element to "Delete" and add the class "button-delete".
         buttonDelete.textContent = "Delete";
         buttonDelete.className = "button-delete";
 
