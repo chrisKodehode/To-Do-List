@@ -2,6 +2,7 @@
     TODO:
     - Fix todo list save LocalStorage
     - Make input value required and can not be empty
+    - Highlight done task "green" and uncompleted task "red"
 */
 
 // Define html elements and assign them to a variable
@@ -16,11 +17,11 @@ htmlForm.addEventListener("submit", function(event){
 
     let inputElement = inputBox;
     if (inputElement.value !== "") {
-        // Create list item and div for the text
+        // Create a list item and style it using CSS property
         let listItem = document.createElement("li");
         listItem.className = "list-item";
         
-        // Create a div to hold the todo text
+        // Create a div to hold the todo text and style it using CSS property
         let divText  = document.createElement("div");
         divText.className = "div-text";
 
@@ -58,6 +59,7 @@ htmlForm.addEventListener("submit", function(event){
 
         // Change the todo item when the Edit button is clicked
         buttonEdit.addEventListener("click", function(){
+            // Create a Input element and assign it to a Edit variable
             let editInput = document.createElement("input");
 
             // Replace the todo text with an input field
@@ -72,7 +74,7 @@ htmlForm.addEventListener("submit", function(event){
             // Focus the input field for immediate editing
             editInput.focus();
 
-            // Save the edited todo text when focus leaves the input field
+            // Save the edited todo text when focus leaves the input field visually
             editInput.addEventListener("blur", function () {
                 // Update the divText with the edited value
                 divText.textContent = editInput.value;
