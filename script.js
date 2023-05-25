@@ -39,9 +39,11 @@ htmlForm.addEventListener("submit", function(event){
         // Create an Edit button and style it using CSS property
         let buttonEdit = document.createElement("button");
         let editIcon = document.createElement("i")
+        
         buttonEdit.textContent = "Edit";
         buttonEdit.className = "button-edit";
 
+        // Icon styling
         editIcon.className = "fa-solid fa-pen-to-square";
         editIcon.style.paddingLeft = "6px";
 
@@ -51,6 +53,7 @@ htmlForm.addEventListener("submit", function(event){
         // Create a Save button and style it using CSS property
         let buttonSave = document.createElement("button");
         let saveIcon = document.createElement("i");
+
         buttonSave.textContent = "Save";
         buttonSave.className = "button-save";
 
@@ -64,9 +67,11 @@ htmlForm.addEventListener("submit", function(event){
         // Create a Delete button and style it using CSS property
         let buttonDelete = document.createElement("button");
         let deleteIcon = document.createElement("i")
+
         buttonDelete.textContent = "Delete";
         buttonDelete.className = "button-delete";
 
+        // Icon styling
         deleteIcon.className = "fa-solid fa-trash";
         deleteIcon.style.paddingLeft = "6px";
         
