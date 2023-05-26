@@ -7,6 +7,8 @@
     * Filter items
 */
 
+"use strict"
+
 // Define html elements and assign them to a variable
 let todoContainer = document.getElementById("todo-container");
 let htmlForm = document.getElementById("todo-form");
